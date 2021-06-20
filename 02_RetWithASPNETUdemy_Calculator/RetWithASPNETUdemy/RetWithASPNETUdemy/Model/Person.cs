@@ -1,16 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using RetWithASPNETUdemy.Model.Base;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RetWithASPNETUdemy.Model
 {
-    public class Person
+    [Table("person")]
+    public class Person : BaseEntity
     {
-        public long Id { get; set; }
+
+        [Column("first_name")]
         public string FirstName { get; set; }
+
+        [Column("last_name")]
         public string LastName { get; set; }
+
+        [Column("address")]
         public string Adress { get; set; }
+
+        [Column("gender")]
         public string Gender { get; set; }
     }
 }

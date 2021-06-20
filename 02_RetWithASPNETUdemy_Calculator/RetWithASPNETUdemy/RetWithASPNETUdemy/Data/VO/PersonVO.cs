@@ -1,0 +1,26 @@
+﻿using RetWithASPNETUdemy.Hypermedia;
+using RetWithASPNETUdemy.Hypermedia.Abstract;
+using System.Collections.Generic;
+using System.Text.Json.Serialization;
+
+namespace RetWithASPNETUdemy.Data.VO
+{
+    public class PersonVO : ISupportsHyperMedia
+    {
+        //[JsonPropertyName("code")]
+        public long Id { get; set; }
+
+        //[JsonPropertyName("name")]
+        public string FirstName { get; set; }
+
+        //[JsonPropertyName("last_name")]
+        public string LastName { get; set; }
+
+        //[JsonIgnore]
+        public string Adress { get; set; }
+
+        //[JsonPropertyName("sex")]
+        public string Gender { get; set; }
+        public List<HyperMediaLink> Links { get; set; } = new List<HyperMediaLink>();
+    }
+}
